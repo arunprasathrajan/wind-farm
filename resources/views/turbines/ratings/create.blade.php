@@ -4,6 +4,16 @@
     <div class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded shadow">
         <h2 class="text-2xl font-bold mb-6">Submit Ratings for "{{ $turbine->name }}"</h2>
 
+        @if ($errors->any())
+            <div class="bg-red-100 p-3 rounded mb-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="text-red-700">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form method="POST" action="{{ route('ratings.store', $turbine) }}">
             @csrf
 

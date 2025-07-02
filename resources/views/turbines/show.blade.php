@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="container mx-auto px-4 py-8">
+
+        @if(session('success'))
+            <div class="mb-4 bg-green-100 border text-green-700 px-4 py-3 rounded" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+        
         <div class="flex items-center mb-6">
             <h1 class="text-2xl font-bold mb-4">
                 {{ $turbine->name }}

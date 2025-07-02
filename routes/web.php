@@ -32,4 +32,5 @@ Route::post('/inspector/logout', [InspectorController::class, 'logout'])->name('
 
 Route::middleware('auth')->group(function () {
     Route::get('/turbine/{turbine}/ratings/create', [RatingController::class, 'create'])->name('ratings.create');
+    Route::post('/turbine/{turbine}/ratings', [RatingController::class, 'store'])->name('ratings.store');
 });
