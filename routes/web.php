@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TurbineController::class, 'index'])->name('turbines.index');
 Route::get('/turbine/{turbine}', [TurbineController::class, 'show'])->name('turbines.show');
+Route::get('/turbine/{turbine}/inspection/history', [TurbineController::class, 'inspectionHistory'])
+    ->name('inspection.history');
 
 /********************* Inspector ***********************************************/
 
