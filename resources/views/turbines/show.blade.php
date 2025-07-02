@@ -12,6 +12,12 @@
         <div class="flex items-center mb-6">
             <h1 class="text-2xl font-bold mb-4">
                 {{ $turbine->name }}
+                
+                @if($turbine->recentRating)
+                    <small class="text-sm text-gray-500 block font-normal mt-1">
+                        Inspection done on {{ $turbine->recentRating->inspected_at->format('d M Y, h:i A') }}
+                    </small>
+                @endif
             </h1>
 
             @auth
@@ -44,6 +50,10 @@
         @endif
 
         <div class="mb-6 p-4 flex">
+            <a href="{{ route('inspection.history', $turbine->id) }}" class="mr-auto bg-purple-700 text-white px-4 rounded font-semibold">
+                View all Previous Inspections
+            </a>
+
             <a href="{{ route('turbines.index') }}" class="ml-auto bg-pink-700 text-white px-4 rounded font-semibold">
                 &larr; Back to all Turbines
             </a>
