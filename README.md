@@ -62,6 +62,15 @@ docker run --rm \
 laravelsail/php81-composer:latest \
 composer install --ignore-platform-reqs
 ```
+
+## Before Starting
+Please make sure to migrate and seed the database to set up the rough data:
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
 ### My Notes
 ## Specs
 - The application manages Turbines with multiple Components.
