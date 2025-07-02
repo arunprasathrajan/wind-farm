@@ -62,6 +62,36 @@ docker run --rm \
 laravelsail/php81-composer:latest \
 composer install --ignore-platform-reqs
 ```
+### My Notes
+## Specs
+- The application manages Turbines with multiple Components.
+- Inspector (User) can log in to rate the components of a turbine.
+- Ratings are stored with details including:
+    - Inspector (User) ID
+    - Turbine ID
+    - Component ID
+    - Rating value (1 to 5)
+    - Inspection date and time
+- Recent ratings for a component are displayed by default for a turbine.
+- Historical rating data is accessible via a dedicated page showing all previous inspections.
+- User authentication is implemented for inspectors; 
+    - general users can browse turbines and previous inspections without login.
 
-## Your Notes
-This is a place for you to add your notes, plans, thinking and any feedback you have for us of the task, please feel free to include whatever you like here, we'll make sure to read it. 
+## Plans
+- Provide an user friendly interface on the homepage showing all turbines.
+- Clicking a turbine leads to the turbine page showing its components and their recent ratings.
+- Only logged in inspector can see a Submit Rating button on the turbine page.
+- A separate "Previous Inspections" page to show the rating history:
+    - Columns: Components
+    - Rows: Inspection dates
+    - Cells: Ratings submitted for each component on those dates
+
+## Design
+- Database:
+    - turbines: stores turbine info
+    - components: stores components info
+    - ratings: stores inspector ratings for the components
+    - users: stores inspector info and credentials
+- UI/UX:
+    - Tailwind CSS for responsive design
+    - Rating form with validation (rating between 1 and 5, examination date not in future)
