@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TurbineSeeder::class,
             ComponentSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

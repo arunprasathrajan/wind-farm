@@ -21,3 +21,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TurbineController::class, 'index'])->name('turbines.index');
 Route::get('/turbine/{turbine}', [TurbineController::class, 'show'])->name('turbines.show');
+
+/********************* Inspector ***********************************************/
+
+Route::get('/inspector/login', [InspectorController::class, 'show'])->name('inspector.show');
+Route::post('/inspector/login', [InspectorController::class, 'login'])->name('inspector.login');
+Route::post('/inspector/logout', [InspectorController::class, 'logout'])->name('inspector.logout');
