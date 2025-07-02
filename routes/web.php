@@ -27,3 +27,9 @@ Route::get('/turbine/{turbine}', [TurbineController::class, 'show'])->name('turb
 Route::get('/inspector/login', [InspectorController::class, 'show'])->name('inspector.show');
 Route::post('/inspector/login', [InspectorController::class, 'login'])->name('inspector.login');
 Route::post('/inspector/logout', [InspectorController::class, 'logout'])->name('inspector.logout');
+
+/********************* Ratings ***********************************************/
+
+Route::middleware('auth')->group(function () {
+    Route::get('/turbine/{turbine}/ratings/create', [RatingController::class, 'create'])->name('ratings.create');
+});

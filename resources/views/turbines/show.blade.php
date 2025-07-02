@@ -6,6 +6,12 @@
             <h1 class="text-2xl font-bold mb-4">
                 {{ $turbine->name }}
             </h1>
+
+            @auth
+                <a href="{{ route('ratings.create', $turbine->id) }}" class="ml-auto bg-blue-700 text-white px-4 py-2 rounded font-semibold">
+                    Submit Rating
+                </a>
+            @endauth
         </div>
 
         @if($turbine->components->count())
