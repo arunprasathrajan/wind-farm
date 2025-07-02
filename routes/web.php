@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\InspectorController;
+use App\Http\Controllers\RatingController;
+use App\Http\Controllers\TurbineController;
 use Illuminate\Support\Facades\Route;
 
 /*
