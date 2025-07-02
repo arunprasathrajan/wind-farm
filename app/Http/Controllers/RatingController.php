@@ -38,7 +38,7 @@ class RatingController extends Controller
         $request->validate([
             'ratings' => 'required|array',
             'ratings.*' => 'required|integer|min:1|max:5',
-            'inspected_at' => 'required|date',
+            'inspected_at' => 'required|date|before_or_equal:today',
         ]);
 
         $user = Auth::user();
