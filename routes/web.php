@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 /********************* Turbines ***********************************************/
 
 Route::get('/', [TurbineController::class, 'index'])->name('turbines.index');
+Route::get('/turbine/{turbine}', [TurbineController::class, 'show'])->name('turbines.show');

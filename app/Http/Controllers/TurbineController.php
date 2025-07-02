@@ -18,4 +18,18 @@ class TurbineController extends Controller
 
         return view('turbines.index', compact('turbines'));
     }
+
+    /**
+     * Display the specified turbine with its components.
+     * 
+     * @param  Turbine  $turbine
+     * 
+     * @return View
+     */
+    public function show(Turbine $turbine): View
+    {
+        $turbine->load('components.recentRating');
+
+        return view('turbines.show', compact('turbine'));
+    }
 }
